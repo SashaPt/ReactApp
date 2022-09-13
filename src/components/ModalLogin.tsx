@@ -1,10 +1,9 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import Context from '../context/context';
 import Login from './Login';
-import { IUser } from './User/IUser';
 
-const ModalLogin = ({setUser}: {setUser: Dispatch<SetStateAction<IUser>>}) => {
+const ModalLogin = () => {
   const { openModal, setOpenModal } = useContext(Context);
   return (
     <div
@@ -16,7 +15,7 @@ const ModalLogin = ({setUser}: {setUser: Dispatch<SetStateAction<IUser>>}) => {
       onClick={(event) => setOpenModal(false)}
     >
       <div
-        className='modal-dialog w-25'
+        className='modal-dialog'
         onClick={(event) => event.stopPropagation()}
       >
         <div className='modal-content'>
@@ -31,7 +30,7 @@ const ModalLogin = ({setUser}: {setUser: Dispatch<SetStateAction<IUser>>}) => {
             ></button>
           </div>
           <div className='modal-body'>
-            <Login setUser={setUser}/>
+            <Login />
           </div>
         </div>
       </div>

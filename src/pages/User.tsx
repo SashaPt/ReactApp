@@ -1,7 +1,9 @@
 import React from 'react';
 import { IUser } from '../components/User/IUser';
 
-const User = ({ user }: { user: IUser }) => {
+const User = () => {
+  const user : IUser = JSON.parse( localStorage.user );
+
   return (
     <div className="col">
       <div className="card">
@@ -13,7 +15,6 @@ const User = ({ user }: { user: IUser }) => {
             style={{ height: '100%', width: 'auto' }}
           />
         </div>
-
         <div className="card-body">
           <h4 className="card-title">Username: {user.username}</h4>
           <h5 className="card-title">First Name: {user.firstName}</h5>
